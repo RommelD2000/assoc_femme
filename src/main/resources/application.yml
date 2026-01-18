@@ -1,0 +1,19 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9090/realms/realm_assoc_femme
+          jwk-set-uri: http://localhost:9090/realms/realm_assoc_femme/protocol/openid-connect/certs
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+
+jwt:
+  auth:
+    converter:
+      resource-id: client_assoc_femme
+      principle-attribute: preferred_username
